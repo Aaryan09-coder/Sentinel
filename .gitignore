@@ -1,0 +1,10 @@
+target/
+.idea/
+*.iml
+.vscode/
+.env
+*.log
+node_modules/
+__pycache__/
+.venv/
+HELP.md
