@@ -1,3 +1,22 @@
+server:
+  port: 8081
+
 spring:
   application:
     name: sentinel-api
+  datasource:
+    url: ${SENTINEL_DB_URL:jdbc:postgresql://localhost:5432/sentinel_db}
+    username: ${SENTINEL_DB_USER:postgres}
+    password: ${SENTINEL_DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  kafka:
+    bootstrap-servers: ${SENTINEL_KAFKA_BOOTSTRAP:localhost:9092}
+
+sentinel:
+  clickhouse:
+    url: ${SENTINEL_CH_URL:jdbc:clickhouse://localhost:8123/sentinel}
+    username: ${SENTINEL_CH_USER:sentinel}
+    password: ${SENTINEL_CH_PASSWORD:sentinel}
